@@ -1,0 +1,62 @@
+{
+  "name": "vue-js-es5-highlighter",
+  "displayName": "Vue Highlighter for JS ES5 Syntax",
+  "description": "Highlight JS ES5 Vue Code (Without Build Tools)",
+  "version": "0.0.2",
+  "publisher": "AlexandreJALLET",
+  "author": {
+    "name": "Alexandre JALLET"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Mending-Electronics/Vue-Code-Highlighter-for-JS-ES5-Syntax"
+  },
+  
+  "icon": "assets/extension-icon.png",
+  "galleryBanner": {
+    "color": "#42b883",
+    "theme": "dark"
+  },
+  
+  "badges": [
+    {
+      "url": "https://img.shields.io/badge/Vue-3-brightgreen.svg",
+      "href": "https://vuejs.org/",
+      "description": "Vue 3 compatible"
+    }
+  ],
+
+
+  "engines": {
+    "vscode": "^1.50.0"
+  },
+  "contributes": {
+    "languages": [
+      {
+        "id": "vue-withoutbuildtools",
+        "aliases": ["Vue (WithoutBuildTools)"],
+        "extensions": [".vue"],
+        "configuration": "./language-configuration.json",
+        "icon": {
+          "light": "./assets/vue.svg",
+          "dark": "./assets/vue.svg"
+        }
+      }
+    ],
+    "grammars": [
+      {
+        "language": "vue-withoutbuildtools",
+        "scopeName": "source.js",
+        "path": "./src/javascript/syntaxes/JavaScript.tmLanguage.json"
+      },
+      {
+        "scopeName": "vue-withoutbuildtools.template-injection",
+        "path": "./syntaxes/vue-withoutbuildtools.template-injection.tmLanguage.json",
+        "injectTo": ["source.js"]
+      }
+    ]
+
+
+  }
+}

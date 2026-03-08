@@ -1,0 +1,47 @@
+{
+  "name": "Vue (WithoutBuildTools) Template Injection",
+  "scopeName": "vue-withoutbuildtools.template-injection",
+  "injectionSelector": "L:source.js",
+  "patterns": [
+    {
+      "name": "meta.embedded.block.html.vue-withoutbuildtools",
+      "begin": "(?x)(?<![\\w$])template\\s*:\\s*`",
+      "beginCaptures": {
+        "0": {
+          "name": "punctuation.definition.string.template.begin.js"
+        }
+      },
+      "end": "`",
+      "endCaptures": {
+        "0": {
+          "name": "punctuation.definition.string.template.end.js"
+        }
+      },
+      "patterns": [
+        {
+          "include": "text.html.basic"
+        },
+        {
+          "name": "meta.embedded.expression.js",
+          "begin": "\\$\\{",
+          "beginCaptures": {
+            "0": {
+              "name": "punctuation.definition.template-expression.begin.js"
+            }
+          },
+          "end": "\\}",
+          "endCaptures": {
+            "0": {
+              "name": "punctuation.definition.template-expression.end.js"
+            }
+          },
+          "patterns": [
+            {
+              "include": "source.js"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

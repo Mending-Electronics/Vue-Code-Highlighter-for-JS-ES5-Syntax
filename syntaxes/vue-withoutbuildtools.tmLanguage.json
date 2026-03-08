@@ -1,0 +1,199 @@
+{
+  "information_for_contributors": [
+    "Vue (WithoutBuildTools) Language Mode",
+    "Based on JavaScript and HTML syntaxes for Vue files without build tools"
+  ],
+  "version": "1.0.0",
+  "name": "Vue (WithoutBuildTools)",
+  "scopeName": "source.vue-withoutbuildtools",
+  "patterns": [
+    {
+      "include": "#vue-template"
+    },
+    {
+      "include": "#vue-script"
+    },
+    {
+      "include": "#vue-style"
+    }
+  ],
+  "repository": {
+    "vue-template": {
+      "name": "meta.template.vue",
+      "begin": "<template",
+      "end": "</template>",
+      "patterns": [
+        {
+          "name": "meta.tag.template.begin.vue",
+          "begin": "<template\\b[^>]*>",
+          "end": ">",
+          "patterns": [
+            {
+              "include": "#tag-attributes"
+            }
+          ]
+        },
+        {
+          "name": "meta.tag.template.end.vue",
+          "match": "</template>"
+        },
+        {
+          "begin": "(?<=<template[^>]*>)",
+          "end": "(?=</template>)",
+          "name": "text.html.embedded.vue",
+          "patterns": [
+            {
+              "include": "text.html.basic"
+            },
+            {
+              "include": "#vue-interpolations"
+            }
+          ]
+        }
+      ]
+    },
+    "vue-script": {
+      "name": "meta.script.vue",
+      "begin": "<script",
+      "end": "</script>",
+      "patterns": [
+        {
+          "name": "meta.tag.script.begin.vue",
+          "begin": "<script\\b[^>]*>",
+          "end": ">",
+          "patterns": [
+            {
+              "include": "#tag-attributes"
+            }
+          ]
+        },
+        {
+          "name": "meta.tag.script.end.vue",
+          "match": "</script>"
+        },
+        {
+          "begin": "(?<=<script[^>]*>)",
+          "end": "(?=</script>)",
+          "name": "source.js.embedded.vue",
+          "patterns": [
+            {
+              "include": "source.js"
+            }
+          ]
+        }
+      ]
+    },
+    "vue-style": {
+      "name": "meta.style.vue",
+      "begin": "<style",
+      "end": "</style>",
+      "patterns": [
+        {
+          "name": "meta.tag.style.begin.vue",
+          "begin": "<style\\b[^>]*>",
+          "end": ">",
+          "patterns": [
+            {
+              "include": "#tag-attributes"
+            }
+          ]
+        },
+        {
+          "name": "meta.tag.style.end.vue",
+          "match": "</style>"
+        },
+        {
+          "begin": "(?<=<style[^>]*>)",
+          "end": "(?=</style>)",
+          "name": "source.css.embedded.vue",
+          "patterns": [
+            {
+              "include": "source.css"
+            }
+          ]
+        }
+      ]
+    },
+    "vue-interpolations": {
+      "patterns": [
+        {
+          "name": "meta.interpolation.vue",
+          "begin": "\\{\\{",
+          "end": "\\}\\}",
+          "patterns": [
+            {
+              "name": "punctuation.definition.interpolation.begin.vue",
+              "match": "\\{\\{"
+            },
+            {
+              "name": "source.js.embedded.html",
+              "patterns": [
+                {
+                  "include": "source.js"
+                }
+              ]
+            },
+            {
+              "name": "punctuation.definition.interpolation.end.vue",
+              "match": "\\}\\}"
+            }
+          ]
+        }
+      ]
+    },
+    "tag-attributes": {
+      "patterns": [
+        {
+          "include": "#attribute-name"
+        },
+        {
+          "include": "#attribute-value"
+        }
+      ]
+    },
+    "attribute-name": {
+      "patterns": [
+        {
+          "name": "entity.other.attribute-name.vue",
+          "match": "\\b[a-zA-Z][-a-zA-Z0-9_]*\\b"
+        }
+      ]
+    },
+    "attribute-value": {
+      "patterns": [
+        {
+          "begin": "=",
+          "end": "(?=[\\s>])",
+          "patterns": [
+            {
+              "name": "punctuation.separator.key-value.vue",
+              "match": "="
+            },
+            {
+              "name": "string.quoted.double.vue",
+              "begin": "\"",
+              "end": "\"",
+              "patterns": [
+                {
+                  "name": "constant.character.escape.vue",
+                  "match": "\\\\."
+                }
+              ]
+            },
+            {
+              "name": "string.quoted.single.vue",
+              "begin": "'",
+              "end": "'",
+              "patterns": [
+                {
+                  "name": "constant.character.escape.vue",
+                  "match": "\\\\."
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  }
+}
