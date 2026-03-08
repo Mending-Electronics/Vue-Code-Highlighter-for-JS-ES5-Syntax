@@ -105,15 +105,106 @@ vue.svg                                # Vue icon (favicon)
 ## 🔧 Development
 
 ### Prerequisites
-- VSCode or Windsurf
-- Node.js (for packaging, not required for development)
+- **VSCode** or **Windsurf** (for development and testing)
+- **Node.js** (version 14.0.0 or higher) - Required for packaging and building
+- **npm** (comes with Node.js) - Package manager and build tools
+
+### Installing Node.js and npm
+
+#### Option 1: Official Installer (Recommended)
+1. Download Node.js from [https://nodejs.org/](https://nodejs.org/)
+2. Choose the LTS (Long Term Support) version
+3. Run the installer for your operating system
+4. Verify installation:
+   ```bash
+   node --version
+   npm --version
+   ```
+
+#### Option 2: Package Manager
+- **macOS (Homebrew):**
+  ```bash
+  brew install node
+  ```
+- **Ubuntu/Debian:**
+  ```bash
+  sudo apt update
+  sudo apt install nodejs npm
+  ```
+- **Windows (Chocolatey):**
+  ```bash
+  choco install nodejs
+  ```
 
 ### Building the Extension
+
+#### Step 1: Install vsce (VSCode Extension CLI)
 ```bash
-# Install vsce (VSCode Extension CLI)
+# Install globally
 npm install -g vsce
 
-# Package into .vsix
+# Or install locally in the project
+npm install vsce --save-dev
+```
+
+#### Step 2: Package into VSIX
+```bash
+# From the project root directory
+vsce package
+
+# This creates a .vsix file: vue-js-es5-highlighter-*.vsix
+```
+
+#### Step 3: Install the Extension
+```bash
+# Install the packaged extension
+code --install-extension vue-js-es5-highlighter-*.vsix
+
+# Or use VSCode command palette:
+# 1. Press Ctrl+Shift+P (or Cmd+Shift+P on Mac)
+# 2. Type "Extensions: Install from VSIX..."
+# 3. Select the .vsix file
+```
+
+### Development Workflow
+
+#### Method 1: Development Mode (Recommended for testing)
+1. Open the project in VSCode/Windsurf
+2. Press **F5** → opens new Extension Development Host window
+3. Create/open `.vue` files to test syntax highlighting
+4. Changes to files automatically reload the extension
+
+#### Method 2: Build and Test Cycle
+1. Make changes to the extension
+2. Build the extension:
+   ```bash
+   vsce package
+   ```
+3. Install the new version:
+   ```bash
+   code --install-extension vue-js-es5-highlighter-*.vsix --force
+   ```
+4. Reload VSCode window to apply changes
+
+### Troubleshooting Build Issues
+
+#### Common Problems
+- **Permission errors:** Use `sudo` for global npm installs or configure npm permissions
+- **Node.js version too old:** Update to Node.js 14.0.0 or higher
+- **vsce command not found:** Ensure vsce is installed and in your PATH
+
+#### Clean Build
+```bash
+# Clean npm cache
+npm cache clean --force
+
+# Remove node_modules and package-lock.json
+rm -rf node_modules package-lock.json
+
+# Reinstall dependencies
+npm install
+
+# Rebuild extension
 vsce package
 ```
 

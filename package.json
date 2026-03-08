@@ -2,7 +2,7 @@
   "name": "vue-js-es5-highlighter",
   "displayName": "Vue Highlighter for JS ES5 Syntax",
   "description": "Highlight JS ES5 Vue Code (Without Build Tools)",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "publisher": "AlexandreJALLET",
   "author": {
     "name": "Alexandre JALLET"
@@ -54,6 +54,20 @@
         "scopeName": "vue-withoutbuildtools.template-injection",
         "path": "./syntaxes/vue-withoutbuildtools.template-injection.tmLanguage.json",
         "injectTo": ["source.js"]
+      }
+    ],
+    "snippets": [
+      {
+        "language": "vue-withoutbuildtools",
+        "path": "./src/javascript/snippets/javascript.code-snippets"
+      },
+      {
+        "language": "vue-withoutbuildtools",
+        "path": "./src/html/snippets/html.code-snippets"
+      },
+      {
+        "language": "vue-withoutbuildtools",
+        "path": "./src/vue/snippets/vue.code-snippets"
       }
     ]
 

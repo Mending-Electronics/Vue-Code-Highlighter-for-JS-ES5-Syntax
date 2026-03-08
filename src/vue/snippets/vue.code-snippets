@@ -1,0 +1,416 @@
+{
+  "Vue Template": {
+    "prefix": "template",
+    "body": [
+      "template: `",
+      "  $0",
+      "`"
+    ],
+    "description": "Vue template literal"
+  },
+  "Vue Component Basic": {
+    "prefix": "vue-component",
+    "body": [
+      "const ${1:ComponentName} = {",
+      "  template: `",
+      "    $0",
+      "  `,",
+      "  data() {",
+      "    return {",
+      "      ",
+      "    }",
+      "  },",
+      "  methods: {",
+      "    ",
+      "  }",
+      "}"
+    ],
+    "description": "Basic Vue component structure"
+  },
+  "Vue Component with Props": {
+    "prefix": "vue-component-props",
+    "body": [
+      "const ${1:ComponentName} = {",
+      "  template: `",
+      "    $0",
+      "  `,",
+      "  props: {",
+      "    ${2:propName}: {",
+      "      type: ${3:String},",
+      "      default: ${4:null}",
+      "    }",
+      "  },",
+      "  data() {",
+      "    return {",
+      "      ",
+      "    }",
+      "  },",
+      "  methods: {",
+      "    ",
+      "  }",
+      "}"
+    ],
+    "description": "Vue component with props"
+  },
+  "Vue Component with Computed": {
+    "prefix": "vue-component-computed",
+    "body": [
+      "const ${1:ComponentName} = {",
+      "  template: `",
+      "    $0",
+      "  `,",
+      "  data() {",
+      "    return {",
+      "      ",
+      "    }",
+      "  },",
+      "  computed: {",
+      "    ${2:computedProperty}() {",
+      "      return $3",
+      "    }",
+      "  },",
+      "  methods: {",
+      "    ",
+      "  }",
+      "}"
+    ],
+    "description": "Vue component with computed properties"
+  },
+  "Vue Component with Watch": {
+    "prefix": "vue-component-watch",
+    "body": [
+      "const ${1:ComponentName} = {",
+      "  template: `",
+      "    $0",
+      "  `,",
+      "  data() {",
+      "    return {",
+      "      ",
+      "    }",
+      "  },",
+      "  watch: {",
+      "    ${2:watchProperty}(newValue, oldValue) {",
+      "      $3",
+      "    }",
+      "  },",
+      "  methods: {",
+      "    ",
+      "  }",
+      "}"
+    ],
+    "description": "Vue component with watchers"
+  },
+  "Vue Component Full": {
+    "prefix": "vue-component-full",
+    "body": [
+      "const ${1:ComponentName} = {",
+      "  template: `",
+      "    $0",
+      "  `,",
+      "  props: {",
+      "    ",
+      "  },",
+      "  data() {",
+      "    return {",
+      "      ",
+      "    }",
+      "  },",
+      "  computed: {",
+      "    ",
+      "  },",
+      "  watch: {",
+      "    ",
+      "  },",
+      "  created() {",
+      "    ",
+      "  },",
+      "  mounted() {",
+      "    ",
+      "  },",
+      "  methods: {",
+      "    ",
+      "  }",
+      "}"
+    ],
+    "description": "Complete Vue component structure"
+  },
+  "Vue App": {
+    "prefix": "vue-app",
+    "body": [
+      "const { createApp } = Vue",
+      "",
+      "const ${1:App} = {",
+      "  template: `",
+      "    $0",
+      "  `,",
+      "  data() {",
+      "    return {",
+      "      ",
+      "    }",
+      "  },",
+      "  methods: {",
+      "    ",
+      "  }",
+      "}",
+      "",
+      "createApp(${1:App}).mount('#${2:app}')"
+    ],
+    "description": "Vue app with createApp"
+  },
+  "Vue v-if": {
+    "prefix": "v-if",
+    "body": [
+      "v-if=\"${1:condition}\""
+    ],
+    "description": "Vue v-if directive"
+  },
+  "Vue v-else": {
+    "prefix": "v-else",
+    "body": [
+      "v-else"
+    ],
+    "description": "Vue v-else directive"
+  },
+  "Vue v-else-if": {
+    "prefix": "v-else-if",
+    "body": [
+      "v-else-if=\"${1:condition}\""
+    ],
+    "description": "Vue v-else-if directive"
+  },
+  "Vue v-for": {
+    "prefix": "v-for",
+    "body": [
+      "v-for=\"${1:item} in ${2:items}\" :key=\"${1:item}.${3:id}\""
+    ],
+    "description": "Vue v-for directive"
+  },
+  "Vue v-show": {
+    "prefix": "v-show",
+    "body": [
+      "v-show=\"${1:condition}\""
+    ],
+    "description": "Vue v-show directive"
+  },
+  "Vue v-model": {
+    "prefix": "v-model",
+    "body": [
+      "v-model=\"${1:property}\""
+    ],
+    "description": "Vue v-model directive"
+  },
+  "Vue v-bind": {
+    "prefix": "v-bind",
+    "body": [
+      "v-bind:${1:attribute}=\"${2:value}\""
+    ],
+    "description": "Vue v-bind directive"
+  },
+  "Vue v-on": {
+    "prefix": "v-on",
+    "body": [
+      "v-on:${1:event}=\"${2:method}\""
+    ],
+    "description": "Vue v-on directive"
+  },
+  "Vue @click": {
+    "prefix": "@click",
+    "body": [
+      "@click=\"${1:method}\""
+    ],
+    "description": "Vue @click event"
+  },
+  "Vue @submit": {
+    "prefix": "@submit",
+    "body": [
+      "@submit.prevent=\"${1:method}\""
+    ],
+    "description": "Vue @submit event"
+  },
+  "Vue @input": {
+    "prefix": "@input",
+    "body": [
+      "@input=\"${1:method}\""
+    ],
+    "description": "Vue @input event"
+  },
+  "Vue @change": {
+    "prefix": "@change",
+    "body": [
+      "@change=\"${1:method}\""
+    ],
+    "description": "Vue @change event"
+  },
+  "Vue :class": {
+    "prefix": ":class",
+    "body": [
+      ":class=\"{ ${1:className}: ${2:condition} }\""
+    ],
+    "description": "Vue :class binding"
+  },
+  "Vue :style": {
+    "prefix": ":style",
+    "body": [
+      ":style=\"{ ${1:property}: ${2:value} }\""
+    ],
+    "description": "Vue :style binding"
+  },
+  "Vue :key": {
+    "prefix": ":key",
+    "body": [
+      ":key=\"${1:key}\""
+    ],
+    "description": "Vue :key binding"
+  },
+  "Vue interpolation": {
+    "prefix": "{{",
+    "body": [
+      "{{ ${1:expression} }}"
+    ],
+    "description": "Vue interpolation"
+  },
+  "Vue interpolation alternative": {
+    "prefix": "[[",
+    "body": [
+      "[[ ${1:expression} ]]"
+    ],
+    "description": "Vue interpolation (alternative)"
+  },
+  "Vue ref": {
+    "prefix": "ref",
+    "body": [
+      "ref=\"${1:refName}\""
+    ],
+    "description": "Vue ref attribute"
+  },
+  "Vue slot": {
+    "prefix": "slot",
+    "body": [
+      "<slot name=\"${1:slotName}\">$2</slot>"
+    ],
+    "description": "Vue slot"
+  },
+  "Vue slot default": {
+    "prefix": "slot-default",
+    "body": [
+      "<slot>$1</slot>"
+    ],
+    "description": "Vue default slot"
+  },
+  "Vue component registration": {
+    "prefix": "vue-component-register",
+    "body": [
+      "components: {",
+      "  ${1:ComponentName}",
+      "},"
+    ],
+    "description": "Vue component registration"
+  },
+  "Vue mixin": {
+    "prefix": "vue-mixin",
+    "body": [
+      "const ${1:mixinName} = {",
+      "  data() {",
+      "    return {",
+      "      ",
+      "    }",
+      "  },",
+      "  methods: {",
+      "    ",
+      "  }",
+      "}"
+    ],
+    "description": "Vue mixin"
+  },
+  "Vue directive custom": {
+    "prefix": "vue-directive",
+    "body": [
+      "Vue.directive('${1:directiveName}', {",
+      "  bind(el, binding, vnode) {",
+      "    $2",
+      "  },",
+      "  update(el, binding, vnode) {",
+      "    ",
+      "  }",
+      "})"
+    ],
+    "description": "Vue custom directive"
+  },
+  "Vue filter": {
+    "prefix": "vue-filter",
+    "body": [
+      "Vue.filter('${1:filterName}', function(value) {",
+      "  return $2",
+      "})"
+    ],
+    "description": "Vue filter"
+  },
+  "Vue nextTick": {
+    "prefix": "vue-nexttick",
+    "body": [
+      "this.$nextTick(() => {",
+      "  $1",
+      "})"
+    ],
+    "description": "Vue nextTick"
+  },
+  "Vue emit event": {
+    "prefix": "vue-emit",
+    "body": [
+      "this.$emit('${1:event}', ${2:payload})"
+    ],
+    "description": "Vue emit event"
+  },
+  "Vue props validation": {
+    "prefix": "vue-props-validation",
+    "body": [
+      "props: {",
+      "  ${1:propName}: {",
+      "    type: ${2:String},",
+      "    required: ${3:false},",
+      "    default: ${4:null},",
+      "    validator: function(value) {",
+      "      return $5",
+      "    }",
+      "  }",
+      "}"
+    ],
+    "description": "Vue props with validation"
+  },
+  "Vue lifecycle created": {
+    "prefix": "vue-created",
+    "body": [
+      "created() {",
+      "  $1",
+      "},"
+    ],
+    "description": "Vue created lifecycle"
+  },
+  "Vue lifecycle mounted": {
+    "prefix": "vue-mounted",
+    "body": [
+      "mounted() {",
+      "  $1",
+      "},"
+    ],
+    "description": "Vue mounted lifecycle"
+  },
+  "Vue lifecycle updated": {
+    "prefix": "vue-updated",
+    "body": [
+      "updated() {",
+      "  $1",
+      "},"
+    ],
+    "description": "Vue updated lifecycle"
+  },
+  "Vue lifecycle destroyed": {
+    "prefix": "vue-destroyed",
+    "body": [
+      "destroyed() {",
+      "  $1",
+      "},"
+    ],
+    "description": "Vue destroyed lifecycle"
+  }
+}
