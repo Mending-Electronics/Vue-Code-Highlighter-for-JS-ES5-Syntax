@@ -53,6 +53,6 @@ const App2View = {
     handleDataFrom2InApp2(data) {
       window.sharedData.prop1 = 'Réponse de App2: ' + data.tasks.length + ' éléments';
     }
-  }
+  },
 
 };

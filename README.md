@@ -1,111 +1,164 @@
-# Vue (WithoutBuildTools) Syntax Extension
+# Vue Code Highlighter for JS ES5 Syntax
 
 **Author:** Alexandre JALLET | https://github.com/Mending-Electronics
 
 ---
 
-## 📖 Overview
+## 🎯 **Coloration Syntaxique pour Fichiers *.vue en JavaScript ES5 Sans Build Tools**
 
-This extension provides syntax highlighting for **Vue Single File Components (.vue) without build tools**.  
-It treats `.vue` files as **JavaScript** files with embedded HTML in `template: \`...\`` literals, enabling:
-
-- Full JavaScript syntax highlighting and snippets (outside template literals)
-- HTML syntax highlighting inside `template: \`...\`` strings
-- Vue-specific bindings (`v-*`, `:*`, `@*`) with JavaScript expression highlighting in attribute values
-- Vue interpolations (`{{ ... }}` and `[[ ... ]]`) with JavaScript highlighting
+Cette extension fournit la coloration syntaxique pour les fichiers **`.vue`** contenant du **JavaScript ES5 pur**, directement interprétable par le navigateur, **sans Runtime JS**, **sans Build Tools** et **sans Bundler JS**.
 
 ---
 
-## 🎯 Use Cases
+## 📋 **Comparaison des Approches**
 
-### ✅ Recommended
-- Vue components written **without build tools** (e.g., via CDN, simple script tags)
-- Projects mixing Vue with Jinja/Django/other templating engines where `{{ }}` conflicts
-- Single-file components loaded directly in browsers without compilation
+### ❌ **Fichier *.vue avec Runtime + Build Tools** (Extension Vue Officielle)
 
-### ❌ Not Recommended
-- Projects using Vue CLI, Vite, or other build tools (use Volar instead)
-- Complex Vue 3 setups requiring TypeScript, props validation, or advanced language features
+```vue
+<template>
+  <div class="hello">
+    <p>{{ message }}</p>
+    <button @click="increment">
+      Compteur : {{ count }}
+    </button>
+  </div>
+</template>
 
----
+<script setup>
+import { ref } from 'vue'
 
-## 🚀 Features
+// Props
+defineProps({
+  message: {
+    type: String,
+    required: true
+  }
+})
 
-| Feature | Status | Details |
-|---------|--------|---------|
-| JavaScript highlighting | ✅ Full | All JS features, snippets, and IntelliSense |
-| HTML in `template: \`...\`` | ✅ Full | Standard HTML tags and attributes |
-| Vue bindings (`v-*`, `:*`, `@*`) | ✅ Partial | Attribute names recognized, JS expressions highlighted |
-| Interpolations `{{ ... }}` | ✅ Full | JavaScript expressions inside moustache |
-| Interpolations `[[ ... ]]` | ✅ Full | Alternative delimiter (useful with Jinja) |
-| Language icon | ✅ | Vue icon in file explorer and tabs |
-| Auto-completion | ✅ | JavaScript snippets globally; HTML inside templates |
+// State
+const count = ref(0)
 
----
+// Méthodes
+function increment() {
+  count.value++
+}
+</script>
 
-## 📁 File Structure
-
-```
-.vscode/
-├── launch.json          # Extension development launcher
-src/
-├── html/                # Original HTML language mode (VSCode source)
-│   └── syntaxes/
-│       └── html.tmLanguage.json
-├── javascript/          # Original JavaScript language mode (VSCode source)
-│   └── syntaxes/
-│       └── JavaScript.tmLanguage.json
-syntaxes/
-├── vue-html.tmLanguage.json           # Vue-aware HTML grammar
-├── vue-withoutbuildtools.template-injection.tmLanguage.json  # Template literal injection
-package.json                           # Extension manifest
-language-configuration.json           # Vue language configuration
-vue.svg                                # Vue icon (favicon)
+<style scoped>
+.hello {
+  margin-top: 20px;
+}
+button {
+  padding: 8px 12px;
+  cursor: pointer;
+}
+</style>
 ```
 
+### ✅ **Fichier *.vue 100% JavaScript ES5** (Cette Extension)
+
+```javascript
+const HelloView = {
+  props: {
+    message: {
+      type: String,
+      required: true
+    }
+  },
+
+  data() {
+    return {
+      count: 0
+    }
+  },
+
+  methods: {
+    increment() {
+      this.count++
+    }
+  },
+
+  template: `
+    <div class="hello" style="margin-top: 20px;">
+      <p>{{ message }}</p>
+      <button 
+        @click="increment"
+        style="padding: 8px 12px; cursor: pointer;"
+      >
+        Compteur : {{ count }}
+      </button>
+    </div>
+  `
+}
+
+app.component("hello-view", HelloView)
+```
+
 ---
 
-## ⚙️ How It Works
+## 🚀 **Fonctionnalités de l'Extension**
 
-### Language Registration
-- `.vue` files are registered as **JavaScript** (`source.js`) to get full JS features
-- A **template literal injection** detects `template: \`...\`` and switches to HTML mode inside
+### ✅ **Ce que l'extension permet :**
 
-### Grammar Chain
-1. **JavaScript** (`source.js`) → handles everything outside template literals
-2. **Injection** (`vue-withoutbuildtools.template-injection`) → detects `template: \`...\``
-3. **Vue HTML** (`text.html.vue-withoutbuildtools`) → HTML with Vue-specific rules:
-   - `v-*`, `:*`, `@*` attributes → JS in values
-   - `{{ ... }}` and `[[ ... ]]` → JS expressions
+- **Coloriser le code** et utiliser les snippets JavaScript par défaut
+- **Utiliser les snippets Vue personnalisés** pour JavaScript ES5
+- **Coloriser le code et utiliser les snippets HTML** dans les éléments `template: \`\``
+- **Coloriser les syntaxes moustache `{{}}` et `[[]]`** dans les éléments `template: \`\`` pour les rendus Vue, DTL/Jinja*
 
-### Key Files
-- `package.json`: Registers language, grammars, and icon
-- `syntaxes/vue-html.tmLanguage.json`: HTML grammar with Vue injections
-- `syntaxes/vue-withoutbuildtools.template-injection.tmLanguage.json`: Template literal detection
+> ***Note** : DTL/Jinja utilise déjà la syntaxe moustache `{{}}`, donc il est possible de déclarer à Vue l'utilisation de délimiteurs `[[]]` pour éviter les conflits.*
 
 ---
 
-## 🛠️ Installation
+## 📝 **Snippets Vue Personnalisés Disponibles**
 
-### From VSIX (Recommended)
-1. Build the extension (see Build section below)
-2. Install the `.vsix` file:
-   ```bash
-   code --install-extension vue-withoutbuildtools-*.vsix
-   ```
-
-### Development Install
-1. Clone this repository
-2. Open in VSCode/Windsurf
-3. Press **F5** to launch Extension Development Host
-4. Test with `.vue` files
+| Snippet | Préfixe | Utilité |
+|---------|---------|---------|
+| **Vue Template** | `template` | Insère `template: \`\`` |
+| **Vue Component Basic** | `vue-component` | Structure de composant Vue de base |
+| **Vue Component with Props** | `vue-component-props` | Composant avec props |
+| **Vue Component with Computed** | `vue-component-computed` | Composant avec propriétés calculées |
+| **Vue Component with Watch** | `vue-component-watch` | Composant avec watchers |
+| **Vue Component Full** | `vue-component-full` | Structure complète de composant |
+| **Vue App** | `vue-app` | Application Vue complète avec createApp |
+| **Vue v-if** | `v-if` | Directive conditionnelle |
+| **Vue v-for** | `v-for` | Directive de boucle |
+| **Vue v-model** | `v-model` | Liaison de données bidirectionnelle |
+| **Vue @click** | `@click` | Gestionnaire d'événement clic |
+| **Vue :class** | `:class` | Liaison de classe CSS |
+| **Vue interpolation** | `{{` | Interpolation Vue `{{ }}` |
+| **Vue interpolation alternative** | `[[` | Interpolation alternative `[[ ]]` |
+| **Vue lifecycle** | `vue-beforeCreate`, `vue-created`, `vue-beforeMount`, `vue-mounted`, `vue-beforeUpdate`, `vue-updated`, `vue-beforeDestroy`, `vue-destroyed`, `vue-activated`, `vue-deactivated`, `vue-errorCaptured` | Tous les hooks de cycle de vie Vue |
+| **Vue blocks (avec préfixe vue-)** | `vue-data`, `vue-props`, `vue-methods`, `vue-computed`, `vue-watch` | Blocs complets de composants |
+| **Vue blocks (préfixes courts)** | `data`, `props`, `methods`, `computed`, `watch` | Blocs complets sans préfixe |
+| **Vue single items** | `vue-method`, `vue-computed-property`, `vue-watcher`, `method`, `computed-property`, `watcher` | Méthodes, propriétés calculées, watchers individuels |
+| **Vue emit event** | `vue-emit` | Émission d'événement |
 
 ---
+
+## 🚀 **Installation**
+
+1. Installez VS Code
+2. Installez l'extension *.VSIX disponible dans le dossier `build` 
+3. Créez des fichiers `.vue` avec du JavaScript ES5
+4. Bénéficiez automatiquement de la coloration syntaxique et des snippets
+
+---
+
+## 🚀 **Utilisation Rapide**
+
+1. Créez un fichier `app.vue`
+2. Tapez `vue-component` et Tab pour insérer un composant
+3. Tapez `div` et Tab pour insérer `<div></div>` dans le template
+4. Utilisez `[[ ]]` pour éviter les conflits avec Jinja/Django
+
+---
+
+
 
 ## 🔧 Development
 
 ### Prerequisites
-- **VSCode** or **Windsurf** (for development and testing)
+- **VSCode** (for development and testing)
 - **Node.js** (version 14.0.0 or higher) - Required for packaging and building
 - **npm** (comes with Node.js) - Package manager and build tools
 
@@ -155,205 +208,9 @@ vsce package
 # This creates a .vsix file: vue-js-es5-highlighter-*.vsix
 ```
 
-#### Step 3: Install the Extension
-```bash
-# Install the packaged extension
-code --install-extension vue-js-es5-highlighter-*.vsix
-
-# Or use VSCode command palette:
-# 1. Press Ctrl+Shift+P (or Cmd+Shift+P on Mac)
-# 2. Type "Extensions: Install from VSIX..."
-# 3. Select the .vsix file
-```
-
-### Development Workflow
-
-#### Method 1: Development Mode (Recommended for testing)
-1. Open the project in VSCode/Windsurf
-2. Press **F5** → opens new Extension Development Host window
-3. Create/open `.vue` files to test syntax highlighting
-4. Changes to files automatically reload the extension
-
-#### Method 2: Build and Test Cycle
-1. Make changes to the extension
-2. Build the extension:
-   ```bash
-   vsce package
-   ```
-3. Install the new version:
-   ```bash
-   code --install-extension vue-js-es5-highlighter-*.vsix --force
-   ```
-4. Reload VSCode window to apply changes
-
-### Troubleshooting Build Issues
-
-#### Common Problems
-- **Permission errors:** Use `sudo` for global npm installs or configure npm permissions
-- **Node.js version too old:** Update to Node.js 14.0.0 or higher
-- **vsce command not found:** Ensure vsce is installed and in your PATH
-
-#### Clean Build
-```bash
-# Clean npm cache
-npm cache clean --force
-
-# Remove node_modules and package-lock.json
-rm -rf node_modules package-lock.json
-
-# Reinstall dependencies
-npm install
-
-# Rebuild extension
-vsce package
-```
-
-### Testing
-1. Open the project in VSCode/Windsurf
-2. Press **F5** → opens new Extension Development Host window
-3. Create/open `.vue` files to test syntax highlighting
-4. Use `Developer: Inspect Editor Tokens and Scopes` to debug scopes
-
-### Debugging Syntax Issues
-If Vue bindings aren't highlighting:
-1. Open a `.vue` file
-2. Use `Developer: Inspect Editor Tokens and Scopes`
-3. Check if tokens have `text.html.vue-withoutbuildtools` scope
-4. Verify `package.json` grammar paths are correct
-5. Reload Extension Host after changes
-
 ---
 
-## 📝 Example Usage
 
-### Basic Vue Component
-```javascript
-const MyComponent = {
-  template: `
-    <div class="container">
-      <h1>{{ title }}</h1>
-      <button @click="increment">Count: {{ count }}</button>
-      <div :class="{ active: isActive }">
-        <p v-if="showDetails">Details here</p>
-      </div>
-    </div>
-  `,
-  data() {
-    return {
-      title: 'Hello Vue!',
-      count: 0,
-      isActive: false,
-      showDetails: true
-    }
-  },
-  methods: {
-    increment() {
-      this.count++
-    }
-  }
-}
-```
+## 📄 **License**
 
-### With Jinja/Python Integration
-```javascript
-// Using [[ ]] to avoid Jinja {{ }} conflicts
-const Component = {
-  template: `
-    <div>
-      <h1>[[ pageTitle ]]</h1>
-      <p v-if="user.isLoggedIn">Welcome, [[ user.name ]]!</p>
-      <div :class="['card', { highlighted: isFeatured }]">
-        Content here
-      </div>
-    </div>
-  `,
-  data() {
-    return {
-      pageTitle: 'Dashboard',
-      user: { isLoggedIn: true, name: 'Alex' },
-      isFeatured: false
-    }
-  }
-}
-```
-
----
-
-## ⚠️ Limitations & Known Issues
-
-### Current Limitations
-- **Vue bindings**: Attribute names are recognized but may not have distinct highlighting from regular HTML attributes
-- **No TypeScript support**: This is JavaScript-only
-- **No props validation**: No type checking or prop definitions
-- **Limited to template literals**: Only works with `template: \`...\`` syntax
-
-### Known Issues
-- Some complex Vue expressions in attributes may not highlight perfectly
-- Interpolations outside template literals are not supported
-- No IntelliSense for Vue-specific APIs
-
-### Scope Conflicts
-When using with Jinja/Django:
-- Use `[[ ... ]]` interpolations to avoid `{{ }}` conflicts
-- Standard `{{ ... }}` still works for pure Vue projects
-
----
-
-## 🔄 Updates & Maintenance
-
-### Version History
-- **0.0.1**: Initial release with basic JS + HTML highlighting
-
-### Contributing
-1. Fork the repository
-2. Create a feature branch
-3. Test with various `.vue` files
-4. Submit a pull request
-
-### Reporting Issues
-When reporting syntax highlighting issues:
-1. Provide a minimal `.vue` example
-2. Include output from `Developer: Inspect Editor Tokens and Scopes`
-3. Specify VSCode/Windsurf version
-
----
-
-## 📄 License
-
-This extension uses source grammars from VSCode's built-in JavaScript and HTML languages under their original licenses.
-
----
-
-## 🙏 Acknowledgments
-
-- **VSCode Team**: For the original JavaScript and HTML TextMate grammars
-- **Vue.js Team**: For the amazing Vue.js framework
-- **TextMate Community**: For the grammar format and conventions
-
----
-
-## 📞 Contact
-
-- **Author**: Alexandre JALLET
-- **GitHub**: https://github.com/Mending-Electronics
-- **Issues**: Report via GitHub Issues on the repository
-
----
-
-## 🔮 Future Roadmap
-
-### Potential Enhancements
-- [ ] Enhanced Vue binding highlighting
-- [ ] Support for `<script setup>` syntax
-- [ ] Basic component IntelliSense
-- [ ] CSS highlighting in `<style>` blocks
-- [ ] Snippets for common Vue patterns
-
-### Compatibility
-- **VSCode**: 1.50.0+
-- **Windsurf**: Supported
-- **Vue.js**: 2.x and 3.x (without build tools)
-
----
-
-*This extension is designed for developers who prefer simplicity over build tool complexity. For full-featured Vue development, consider using Volar with a proper build setup.*
+MIT License - voir fichier LICENSE pour plus de détails.

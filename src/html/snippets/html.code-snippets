@@ -245,5 +245,114 @@
       "</aside>"
     ],
     "description": "aside element"
+  },
+  "i": {
+    "prefix": "i",
+    "body": [
+      "<i>$1</i>"
+    ],
+    "description": "italic element"
+  },
+  "b": {
+    "prefix": "b",
+    "body": [
+      "<b>$1</b>"
+    ],
+    "description": "bold element"
+  },
+  "br": {
+    "prefix": "br",
+    "body": [
+      "<br />"
+    ],
+    "description": "line break element"
+  },
+  "code": {
+    "prefix": "code",
+    "body": [
+      "<code>$1</code>"
+    ],
+    "description": "code element"
+  },
+  "pre": {
+    "prefix": "pre",
+    "body": [
+      "<pre>",
+      "\t$0",
+      "</pre>"
+    ],
+    "description": "preformatted text element"
+  },
+  "xmp": {
+    "prefix": "xmp",
+    "body": [
+      "<xmp>",
+      "\t$0",
+      "</xmp>"
+    ],
+    "description": "xmp element (preformatted text)"
+  },
+  "strong": {
+    "prefix": "strong",
+    "body": [
+      "<strong>$1</strong>"
+    ],
+    "description": "strong importance element"
+  },
+  "em": {
+    "prefix": "em",
+    "body": [
+      "<em>$1</em>"
+    ],
+    "description": "emphasis element"
+  },
+  "u": {
+    "prefix": "u",
+    "body": [
+      "<u>$1</u>"
+    ],
+    "description": "underline element"
+  },
+  "small": {
+    "prefix": "small",
+    "body": [
+      "<small>$1</small>"
+    ],
+    "description": "small text element"
+  },
+  "mark": {
+    "prefix": "mark",
+    "body": [
+      "<mark>$1</mark>"
+    ],
+    "description": "mark/highlight element"
+  },
+  "del": {
+    "prefix": "del",
+    "body": [
+      "<del>$1</del>"
+    ],
+    "description": "deleted text element"
+  },
+  "ins": {
+    "prefix": "ins",
+    "body": [
+      "<ins>$1</ins>"
+    ],
+    "description": "inserted text element"
+  },
+  "sub": {
+    "prefix": "sub",
+    "body": [
+      "<sub>$1</sub>"
+    ],
+    "description": "subscript element"
+  },
+  "sup": {
+    "prefix": "sup",
+    "body": [
+      "<sup>$1</sup>"
+    ],
+    "description": "superscript element"
   }
 }

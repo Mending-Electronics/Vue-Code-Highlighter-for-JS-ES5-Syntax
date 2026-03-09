@@ -377,6 +377,15 @@
     ],
     "description": "Vue props with validation"
   },
+  "Vue lifecycle beforeCreate": {
+    "prefix": "vue-beforeCreate",
+    "body": [
+      "beforeCreate() {",
+      "  $1",
+      "},"
+    ],
+    "description": "Vue beforeCreate lifecycle"
+  },
   "Vue lifecycle created": {
     "prefix": "vue-created",
     "body": [
@@ -385,6 +394,15 @@
       "},"
     ],
     "description": "Vue created lifecycle"
+  },
+  "Vue lifecycle beforeMount": {
+    "prefix": "vue-beforeMount",
+    "body": [
+      "beforeMount() {",
+      "  $1",
+      "},"
+    ],
+    "description": "Vue beforeMount lifecycle"
   },
   "Vue lifecycle mounted": {
     "prefix": "vue-mounted",
@@ -395,6 +413,15 @@
     ],
     "description": "Vue mounted lifecycle"
   },
+  "Vue lifecycle beforeUpdate": {
+    "prefix": "vue-beforeUpdate",
+    "body": [
+      "beforeUpdate() {",
+      "  $1",
+      "},"
+    ],
+    "description": "Vue beforeUpdate lifecycle"
+  },
   "Vue lifecycle updated": {
     "prefix": "vue-updated",
     "body": [
@@ -404,6 +431,15 @@
     ],
     "description": "Vue updated lifecycle"
   },
+  "Vue lifecycle beforeDestroy": {
+    "prefix": "vue-beforeDestroy",
+    "body": [
+      "beforeDestroy() {",
+      "  $1",
+      "},"
+    ],
+    "description": "Vue beforeDestroy lifecycle"
+  },
   "Vue lifecycle destroyed": {
     "prefix": "vue-destroyed",
     "body": [
@@ -412,5 +448,216 @@
       "},"
     ],
     "description": "Vue destroyed lifecycle"
+  },
+  "Vue lifecycle activated": {
+    "prefix": "vue-activated",
+    "body": [
+      "activated() {",
+      "  $1",
+      "},"
+    ],
+    "description": "Vue activated lifecycle (keep-alive)"
+  },
+  "Vue lifecycle deactivated": {
+    "prefix": "vue-deactivated",
+    "body": [
+      "deactivated() {",
+      "  $1",
+      "},"
+    ],
+    "description": "Vue deactivated lifecycle (keep-alive)"
+  },
+  "Vue lifecycle errorCaptured": {
+    "prefix": "vue-errorCaptured",
+    "body": [
+      "errorCaptured(err, vm, info) {",
+      "  $1",
+      "},"
+    ],
+    "description": "Vue errorCaptured lifecycle"
+  },
+  "Vue methods block": {
+    "prefix": "vue-methods",
+    "body": [
+      "methods: {",
+      "  ${1:methodName}() {",
+      "    $2",
+      "  },",
+      "  ${3:anotherMethod}() {",
+      "    $4",
+      "  }",
+      "},"
+    ],
+    "description": "Vue methods block"
+  },
+  "Vue computed block": {
+    "prefix": "vue-computed",
+    "body": [
+      "computed: {",
+      "  ${1:computedProperty}() {",
+      "    return $2",
+      "  },",
+      "  ${3:anotherComputed}() {",
+      "    return $4",
+      "  }",
+      "},"
+    ],
+    "description": "Vue computed properties block"
+  },
+  "Vue watch block": {
+    "prefix": "vue-watch",
+    "body": [
+      "watch: {",
+      "  ${1:propertyName}(newValue, oldValue) {",
+      "    $2",
+      "  },",
+      "  ${3:anotherProperty}(newValue, oldValue) {",
+      "    $4",
+      "  }",
+      "},"
+    ],
+    "description": "Vue watchers block"
+  },
+  "Vue data block": {
+    "prefix": "vue-data",
+    "body": [
+      "data() {",
+      "  return {",
+      "    ${1:property}: ${2:value},",
+      "    ${3:anotherProperty}: ${4:value}",
+      "  }",
+      "},"
+    ],
+    "description": "Vue data block"
+  },
+  "Vue props block": {
+    "prefix": "vue-props",
+    "body": [
+      "props: {",
+      "  ${1:propName}: {",
+      "    type: ${2:String},",
+      "    required: ${3:false},",
+      "    default: ${4:null}",
+      "  },",
+      "  ${5:anotherProp}: {",
+      "    type: ${6:Object},",
+      "    default: () => ({",
+      "      $7",
+      "    })",
+      "  }",
+      "},"
+    ],
+    "description": "Vue props block"
+  },
+  "Vue method": {
+    "prefix": "vue-method",
+    "body": [
+      "${1:methodName}() {",
+      "  $2",
+      "},"
+    ],
+    "description": "Vue method"
+  },
+  "Vue computed property": {
+    "prefix": "vue-computed-property",
+    "body": [
+      "${1:computedProperty}() {",
+      "  return $2",
+      "},"
+    ],
+    "description": "Vue computed property"
+  },
+  "Vue watcher": {
+    "prefix": "vue-watcher",
+    "body": [
+      "${1:propertyName}(newValue, oldValue) {",
+      "  $2",
+      "},"
+    ],
+    "description": "Vue watcher"
+  },
+  "computed block": {
+    "prefix": "computed",
+    "body": [
+      "computed: {",
+      "  ${1:computedProperty}() {",
+      "    return $2",
+      "  }",
+      "},"
+    ],
+    "description": "Vue computed properties block"
+  },
+  "methods block": {
+    "prefix": "methods",
+    "body": [
+      "methods: {",
+      "  ${1:methodName}() {",
+      "    $2",
+      "  }",
+      "},"
+    ],
+    "description": "Vue methods block"
+  },
+  "data block": {
+    "prefix": "data",
+    "body": [
+      "data() {",
+      "  return {",
+      "    ${1:property}: ${2:value}",
+      "  }",
+      "},"
+    ],
+    "description": "Vue data block"
+  },
+  "watch block": {
+    "prefix": "watch",
+    "body": [
+      "watch: {",
+      "  ${1:propertyName}(newValue, oldValue) {",
+      "    $2",
+      "  }",
+      "},"
+    ],
+    "description": "Vue watchers block"
+  },
+  "props block": {
+    "prefix": "props",
+    "body": [
+      "props: {",
+      "  ${1:propName}: {",
+      "    type: ${2:String},",
+      "    required: ${3:false},",
+      "    default: ${4:null}",
+      "  }",
+      "},"
+    ],
+    "description": "Vue props block"
+  },
+  "method": {
+    "prefix": "method",
+    "body": [
+      "${1:methodName}() {",
+      "  $2",
+      "},"
+    ],
+    "description": "Vue method"
+  },
+  "computed property": {
+    "prefix": "computed-property",
+    "body": [
+      "${1:computedProperty}() {",
+      "  return $2",
+      "},"
+    ],
+    "description": "Vue computed property"
+  },
+  "watcher": {
+    "prefix": "watcher",
+    "body": [
+      "${1:propertyName}(newValue, oldValue) {",
+      "  $2",
+      "},"
+    ],
+    "description": "Vue watcher"
   }
 }

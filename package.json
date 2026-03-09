@@ -2,7 +2,7 @@
   "name": "vue-js-es5-highlighter",
   "displayName": "Vue Highlighter for JS ES5 Syntax",
   "description": "Highlight JS ES5 Vue Code (Without Build Tools)",
-  "version": "0.0.3",
+  "version": "0.1.0",
   "publisher": "AlexandreJALLET",
   "author": {
     "name": "Alexandre JALLET"
@@ -31,7 +31,44 @@
   "engines": {
     "vscode": "^1.50.0"
   },
+  "activationEvents": [
+    "onLanguage:vue-withoutbuildtools"
+  ],
+  "main": "./out/src/extension.js",
+  "devDependencies": {
+    "@types/vscode": "^1.50.0",
+    "typescript": "^4.0.0",
+    "vscode-test": "^1.4.0"
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./"
+  },
   "contributes": {
+    "configuration": {
+      "title": "Vue Highlighter for JS ES5 Syntax",
+      "properties": {
+        "vueHighlighter.suggest.showWords": {
+          "type": "boolean",
+          "default": false,
+          "description": "Disable word-based suggestions to prioritize snippets",
+          "scope": "language-overridable"
+        },
+        "vueHighlighter.tabCompletion": {
+          "type": "boolean",
+          "default": true,
+          "description": "Enable tab completion for snippets",
+          "scope": "language-overridable"
+        }
+      }
+    },
+    "configurationDefaults": {
+      "[vue-withoutbuildtools]": {
+        "editor.suggest.showWords": false,
+        "editor.tabCompletion": "on"
+      }
+    },
     "languages": [
       {
         "id": "vue-withoutbuildtools",
