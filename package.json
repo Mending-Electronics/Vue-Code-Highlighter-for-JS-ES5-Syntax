@@ -2,7 +2,7 @@
   "name": "vue-js-es5-highlighter",
   "displayName": "Vue Highlighter for JS ES5 Syntax",
   "description": "Highlight JS ES5 Vue Code (Without Build Tools)",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "publisher": "AlexandreJALLET",
   "author": {
     "name": "Alexandre JALLET"
