@@ -1,0 +1,183 @@
+{
+  "CSS Rule": {
+    "prefix": "rule",
+    "body": [
+      "${1:selector} {",
+      "  ${2:property}: ${3:value};",
+      "}"
+    ],
+    "description": "CSS rule"
+  },
+  "CSS Class": {
+    "prefix": ".",
+    "body": [
+      ".${1:className} {",
+      "  ${2:property}: ${3:value};",
+      "}"
+    ],
+    "description": "CSS class selector"
+  },
+  "CSS ID": {
+    "prefix": "#",
+    "body": [
+      "#${1:idName} {",
+      "  ${2:property}: ${3:value};",
+      "}"
+    ],
+    "description": "CSS ID selector"
+  },
+  "CSS Background": {
+    "prefix": "bg",
+    "body": [
+      "background: ${1:#fff};"
+    ],
+    "description": "CSS background property"
+  },
+  "CSS Color": {
+    "prefix": "color",
+    "body": [
+      "color: ${1:#000};"
+    ],
+    "description": "CSS color property"
+  },
+  "CSS Margin": {
+    "prefix": "margin",
+    "body": [
+      "margin: ${1:0};"
+    ],
+    "description": "CSS margin property"
+  },
+  "CSS Padding": {
+    "prefix": "padding",
+    "body": [
+      "padding: ${1:0};"
+    ],
+    "description": "CSS padding property"
+  },
+  "CSS Display Flex": {
+    "prefix": "flex",
+    "body": [
+      "display: flex;"
+    ],
+    "description": "CSS display flex"
+  },
+  "CSS Display Grid": {
+    "prefix": "grid",
+    "body": [
+      "display: grid;"
+    ],
+    "description": "CSS display grid"
+  },
+  "CSS Display Block": {
+    "prefix": "block",
+    "body": [
+      "display: block;"
+    ],
+    "description": "CSS display block"
+  },
+  "CSS Display Inline": {
+    "prefix": "inline",
+    "body": [
+      "display: inline;"
+    ],
+    "description": "CSS display inline"
+  },
+  "CSS Width": {
+    "prefix": "width",
+    "body": [
+      "width: ${1:100%};"
+    ],
+    "description": "CSS width property"
+  },
+  "CSS Height": {
+    "prefix": "height",
+    "body": [
+      "height: ${1:100%};"
+    ],
+    "description": "CSS height property"
+  },
+  "CSS Font Size": {
+    "prefix": "font-size",
+    "body": [
+      "font-size: ${1:16px};"
+    ],
+    "description": "CSS font-size property"
+  },
+  "CSS Font Weight": {
+    "prefix": "font-weight",
+    "body": [
+      "font-weight: ${1:bold};"
+    ],
+    "description": "CSS font-weight property"
+  },
+  "CSS Border": {
+    "prefix": "border",
+    "body": [
+      "border: ${1:1px solid #000};"
+    ],
+    "description": "CSS border property"
+  },
+  "CSS Border Radius": {
+    "prefix": "border-radius",
+    "body": [
+      "border-radius: ${1:4px};"
+    ],
+    "description": "CSS border-radius property"
+  },
+  "CSS Position Absolute": {
+    "prefix": "absolute",
+    "body": [
+      "position: absolute;"
+    ],
+    "description": "CSS position absolute"
+  },
+  "CSS Position Relative": {
+    "prefix": "relative",
+    "body": [
+      "position: relative;"
+    ],
+    "description": "CSS position relative"
+  },
+  "CSS Position Fixed": {
+    "prefix": "fixed",
+    "body": [
+      "position: fixed;"
+    ],
+    "description": "CSS position fixed"
+  },
+  "CSS Text Align Center": {
+    "prefix": "text-center",
+    "body": [
+      "text-align: center;"
+    ],
+    "description": "CSS text-align center"
+  },
+  "CSS Text Align Left": {
+    "prefix": "text-left",
+    "body": [
+      "text-align: left;"
+    ],
+    "description": "CSS text-align left"
+  },
+  "CSS Text Align Right": {
+    "prefix": "text-right",
+    "body": [
+      "text-align: right;"
+    ],
+    "description": "CSS text-align right"
+  },
+  "CSS Overflow Hidden": {
+    "prefix": "overflow-hidden",
+    "body": [
+      "overflow: hidden;"
+    ],
+    "description": "CSS overflow hidden"
+  },
+  "CSS Cursor Pointer": {
+    "prefix": "cursor-pointer",
+    "body": [
+      "cursor: pointer;"
+    ],
+    "description": "CSS cursor pointer"
+  }
+}

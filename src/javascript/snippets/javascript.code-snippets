@@ -106,6 +106,7 @@
   "Class Definition": {
     "prefix": "class",
     "isFileTemplate": true,
+    "scope": "source.js - meta.embedded.block.html",
     "body": [
       "class ${1:name} {",
       "\tconstructor(${2:parameters}) {",

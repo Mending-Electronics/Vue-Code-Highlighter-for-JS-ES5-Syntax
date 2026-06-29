@@ -105,6 +105,10 @@
       {
         "language": "vue-withoutbuildtools",
         "path": "./src/vue/snippets/vue.code-snippets"
+      },
+      {
+        "language": "vue-withoutbuildtools",
+        "path": "./src/css/snippets/css.code-snippets"
       }
     ]
 

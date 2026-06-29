@@ -354,5 +354,12 @@
       "<sup>$1</sup>"
     ],
     "description": "superscript element"
+  },
+  "class attribute": {
+    "prefix": "class",
+    "body": [
+      "class=\"${1:className}\""
+    ],
+    "description": "CSS class attribute"
   }
 }

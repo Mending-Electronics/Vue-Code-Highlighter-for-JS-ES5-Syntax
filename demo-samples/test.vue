@@ -29,10 +29,26 @@ const App2View = {
         <p :class="$attrs.class">Hi!</p>
         <span>This is a child component</span>
 
-
+        <div class="my-class">
+          
+        </div>
       </div>
     </div>
   `,
+
+  style:`
+  .my-class {
+    color: red;
+  }
+  body {
+    background-color: #f0f0f0;
+  }
+  #app-2 {
+    margin-top: 20px;
+  }
+
+
+  `
 
   computed: {
     sharedData() {

@@ -42,6 +42,26 @@
           ]
         }
       ]
+    },
+    {
+      "name": "meta.embedded.block.css.vue-withoutbuildtools",
+      "begin": "(?x)(?<![\\w$])style\\s*:\\s*`",
+      "beginCaptures": {
+        "0": {
+          "name": "punctuation.definition.string.template.begin.js"
+        }
+      },
+      "end": "`",
+      "endCaptures": {
+        "0": {
+          "name": "punctuation.definition.string.template.end.js"
+        }
+      },
+      "patterns": [
+        {
+          "include": "source.css"
+        }
+      ]
     }
   ]
 }
