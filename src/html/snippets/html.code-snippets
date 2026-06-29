@@ -361,5 +361,12 @@
       "class=\"${1:className}\""
     ],
     "description": "CSS class attribute"
+  },
+  "style attribute": {
+    "prefix": "style",
+    "body": [
+      "style=\"${1:property}: ${2:value};\""
+    ],
+    "description": "HTML style attribute"
   }
 }

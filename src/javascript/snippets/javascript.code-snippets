@@ -116,6 +116,16 @@
     ],
     "description": "Class Definition"
   },
+  "Vue Style Hook": {
+    "prefix": "style",
+    "scope": "source.js - meta.embedded.block.html",
+    "body": [
+      "style: `",
+      "  $0",
+      "`"
+    ],
+    "description": "Vue style hook for CSS injection"
+  },
   "Method Definition": {
     "prefix": "method",
     "body": [

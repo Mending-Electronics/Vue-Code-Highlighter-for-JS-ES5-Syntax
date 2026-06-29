@@ -29,8 +29,16 @@ const App2View = {
         <p :class="$attrs.class">Hi!</p>
         <span>This is a child component</span>
 
+        <div :style="{ property: value }">
+          
+        </div>
         <div class="my-class">
           
+        </div>
+        <div>
+          <div>
+            
+          </div>
         </div>
       </div>
     </div>
