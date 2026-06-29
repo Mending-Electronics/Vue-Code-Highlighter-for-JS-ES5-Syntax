@@ -18,8 +18,8 @@
   "div": {
     "prefix": "div",
     "body": [
-      "<div>",
-      "\t$0",
+      "<div$1>",
+      "\t",
       "</div>"
     ],
     "description": "div element"
@@ -27,21 +27,21 @@
   "span": {
     "prefix": "span",
     "body": [
-      "<span>$1</span>"
+      "<span$1></span>"
     ],
     "description": "span element"
   },
   "p": {
     "prefix": "p",
     "body": [
-      "<p>$1</p>"
+      "<p$1></p>"
     ],
     "description": "paragraph element"
   },
   "a": {
     "prefix": "a",
     "body": [
-      "<a href=\"$1\">$2</a>"
+      "<a href=\"$1\"$2></a>"
     ],
     "description": "anchor element"
   },
@@ -55,7 +55,7 @@
   "button": {
     "prefix": "button",
     "body": [
-      "<button>$1</button>"
+      "<button$1></button>"
     ],
     "description": "button element"
   },
@@ -69,8 +69,8 @@
   "form": {
     "prefix": "form",
     "body": [
-      "<form>",
-      "\t$0",
+      "<form$1>",
+      "\t",
       "</form>"
     ],
     "description": "form element"
@@ -78,8 +78,8 @@
   "ul": {
     "prefix": "ul",
     "body": [
-      "<ul>",
-      "\t$0",
+      "<ul$1>",
+      "\t",
       "</ul>"
     ],
     "description": "unordered list"
@@ -87,8 +87,8 @@
   "ol": {
     "prefix": "ol",
     "body": [
-      "<ol>",
-      "\t$0",
+      "<ol$1>",
+      "\t",
       "</ol>"
     ],
     "description": "ordered list"
@@ -96,21 +96,21 @@
   "li": {
     "prefix": "li",
     "body": [
-      "<li>$1</li>"
+      "<li$1></li>"
     ],
     "description": "list item"
   },
   "table": {
     "prefix": "table",
     "body": [
-      "<table>",
+      "<table$1>",
       "\t<thead>",
       "\t\t<tr>",
-      "\t\t\t<th>$1</th>",
+      "\t\t\t<th></th>",
       "\t\t</tr>",
       "\t</thead>",
       "\t<tbody>",
-      "\t\t$0",
+      "\t\t",
       "\t</tbody>",
       "</table>"
     ],
@@ -119,8 +119,8 @@
   "tr": {
     "prefix": "tr",
     "body": [
-      "<tr>",
-      "\t$0",
+      "<tr$1>",
+      "\t",
       "</tr>"
     ],
     "description": "table row"
@@ -128,43 +128,43 @@
   "td": {
     "prefix": "td",
     "body": [
-      "<td>$1</td>"
+      "<td$1></td>"
     ],
     "description": "table cell"
   },
   "th": {
     "prefix": "th",
     "body": [
-      "<th>$1</th>"
+      "<th$1></th>"
     ],
     "description": "table header"
   },
   "h1": {
     "prefix": "h1",
     "body": [
-      "<h1>$1</h1>"
+      "<h1$1></h1>"
     ],
     "description": "heading 1"
   },
   "h2": {
     "prefix": "h2",
     "body": [
-      "<h2>$1</h2>"
+      "<h2$1></h2>"
     ],
     "description": "heading 2"
   },
   "h3": {
     "prefix": "h3",
     "body": [
-      "<h3>$1</h3>"
+      "<h3$1></h3>"
     ],
     "description": "heading 3"
   },
   "script": {
     "prefix": "script",
     "body": [
-      "<script>",
-      "\t$0",
+      "<script$1>",
+      "\t",
       "</script>"
     ],
     "description": "script element"
@@ -186,8 +186,8 @@
   "header": {
     "prefix": "header",
     "body": [
-      "<header>",
-      "\t$0",
+      "<header$1>",
+      "\t",
       "</header>"
     ],
     "description": "header element"
@@ -195,8 +195,8 @@
   "footer": {
     "prefix": "footer",
     "body": [
-      "<footer>",
-      "\t$0",
+      "<footer$1>",
+      "\t",
       "</footer>"
     ],
     "description": "footer element"
@@ -204,8 +204,8 @@
   "nav": {
     "prefix": "nav",
     "body": [
-      "<nav>",
-      "\t$0",
+      "<nav$1>",
+      "\t",
       "</nav>"
     ],
     "description": "nav element"
@@ -213,8 +213,8 @@
   "section": {
     "prefix": "section",
     "body": [
-      "<section>",
-      "\t$0",
+      "<section$1>",
+      "\t",
       "</section>"
     ],
     "description": "section element"
@@ -222,8 +222,8 @@
   "article": {
     "prefix": "article",
     "body": [
-      "<article>",
-      "\t$0",
+      "<article$1>",
+      "\t",
       "</article>"
     ],
     "description": "article element"
@@ -231,8 +231,8 @@
   "main": {
     "prefix": "main",
     "body": [
-      "<main>",
-      "\t$0",
+      "<main$1>",
+      "\t",
       "</main>"
     ],
     "description": "main element"
@@ -240,8 +240,8 @@
   "aside": {
     "prefix": "aside",
     "body": [
-      "<aside>",
-      "\t$0",
+      "<aside$1>",
+      "\t",
       "</aside>"
     ],
     "description": "aside element"
@@ -249,14 +249,14 @@
   "i": {
     "prefix": "i",
     "body": [
-      "<i>$1</i>"
+      "<i$1></i>"
     ],
     "description": "italic element"
   },
   "b": {
     "prefix": "b",
     "body": [
-      "<b>$1</b>"
+      "<b$1></b>"
     ],
     "description": "bold element"
   },
@@ -270,15 +270,15 @@
   "code": {
     "prefix": "code",
     "body": [
-      "<code>$1</code>"
+      "<code$1></code>"
     ],
     "description": "code element"
   },
   "pre": {
     "prefix": "pre",
     "body": [
-      "<pre>",
-      "\t$0",
+      "<pre$1>",
+      "\t",
       "</pre>"
     ],
     "description": "preformatted text element"
@@ -286,8 +286,8 @@
   "xmp": {
     "prefix": "xmp",
     "body": [
-      "<xmp>",
-      "\t$0",
+      "<xmp$1>",
+      "\t",
       "</xmp>"
     ],
     "description": "xmp element (preformatted text)"
@@ -295,63 +295,63 @@
   "strong": {
     "prefix": "strong",
     "body": [
-      "<strong>$1</strong>"
+      "<strong$1></strong>"
     ],
     "description": "strong importance element"
   },
   "em": {
     "prefix": "em",
     "body": [
-      "<em>$1</em>"
+      "<em$1></em>"
     ],
     "description": "emphasis element"
   },
   "u": {
     "prefix": "u",
     "body": [
-      "<u>$1</u>"
+      "<u$1></u>"
     ],
     "description": "underline element"
   },
   "small": {
     "prefix": "small",
     "body": [
-      "<small>$1</small>"
+      "<small$1></small>"
     ],
     "description": "small text element"
   },
   "mark": {
     "prefix": "mark",
     "body": [
-      "<mark>$1</mark>"
+      "<mark$1></mark>"
     ],
     "description": "mark/highlight element"
   },
   "del": {
     "prefix": "del",
     "body": [
-      "<del>$1</del>"
+      "<del$1></del>"
     ],
     "description": "deleted text element"
   },
   "ins": {
     "prefix": "ins",
     "body": [
-      "<ins>$1</ins>"
+      "<ins$1></ins>"
     ],
     "description": "inserted text element"
   },
   "sub": {
     "prefix": "sub",
     "body": [
-      "<sub>$1</sub>"
+      "<sub$1></sub>"
     ],
     "description": "subscript element"
   },
   "sup": {
     "prefix": "sup",
     "body": [
-      "<sup>$1</sup>"
+      "<sup$1></sup>"
     ],
     "description": "superscript element"
   },
